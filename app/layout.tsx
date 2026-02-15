@@ -22,12 +22,19 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const formattedDate = Intl.DateTimeFormat("en-US", {
+    dateStyle: "short",
+    timeStyle: "medium",
+  }).format();
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <header>Main header</header>
         {children}
+        <footer>Page rendered on {formattedDate}</footer>
       </body>
     </html>
   );

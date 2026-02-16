@@ -1,4 +1,5 @@
 import { readFile, writeFile } from "../helpers/file-helpers";
+import NumberOfHits from "../components/NumberOfHits";
 
 type Data = {
   hits: number;
@@ -14,7 +15,7 @@ const AboutPage = () => {
   return (
     <div>
       <h1>Welcome</h1>
-      <p>You are visitor number {nextDataValue.hits}</p>
+      <NumberOfHits hits={nextDataValue.hits} />
     </div>
   );
 };

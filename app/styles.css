@@ -86,3 +86,30 @@ button {
 .censored {
   filter: blur(4px);
 }
+.code-snippet {
+  margin: 2rem -1em 6rem !important;
+  border-radius: 8px !important;
+  background: var(--syntax-bg);
+}
+.code-snippet pre {
+  background: transparent !important;
+}
+
+.reveal {
+  display: flex;
+  justify-content: center;
+  margin: 2rem -1em 6rem !important;
+  padding: 2rem;
+  border-radius: 8px !important;
+  background: var(--syntax-bg);
+}
+.reveal button {
+  color-scheme: dark;
+  font-size: 1rem;
+  padding: 8px 24px;
+  font-weight: 600;
+  background: hsl(255deg 100% 55%);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}

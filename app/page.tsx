@@ -1,8 +1,7 @@
-import React from "react";
-
-import styles from "./page.module.css";
 import { MaxWidthWrapper } from "./components/MaxWidthWrapper/MaxWidthWrapper";
 import { DrumMachine } from "./components/DrumMachine/DrumMachine";
+
+import styles from "./page.module.css";
 
 function Home() {
   return (

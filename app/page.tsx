@@ -2,10 +2,12 @@ import { MaxWidthWrapper } from "./components/MaxWidthWrapper/MaxWidthWrapper";
 import { DrumMachine } from "./components/DrumMachine/DrumMachine";
 
 import styles from "./page.module.css";
+import Counter from "./components/Counter";
 
 function Home() {
   return (
     <MaxWidthWrapper as="main" className={styles.wrapper}>
+      <Counter />
       <h1>Welcome to the zaniest place on the ‘Web!</h1>
       <p>
         Hey there, fellow netizens! If you&apos;re reading this, you&apos;ve

@@ -8,10 +8,13 @@ import styles from "./Header.module.css";
 import { MaxWidthWrapper } from "../MaxWidthWrapper/MaxWidthWrapper";
 import Link from "next/link";
 import { useSoundContext } from "@/app/providers/SoundProvider";
+import { ComponentKey, components } from "..";
+import { useComponentContext } from "@/app/providers/ComponentProvider";
 
 function Header() {
   const id = React.useId();
   const { soundEnabled, setSoundEnabled } = useSoundContext();
+  const {selectedComponent, setSelectedComponent} = useComponentContext()
 
   return (
     <header className={styles.wrapper}>
@@ -26,6 +29,19 @@ function Header() {
             {soundEnabled ? "Disable sound effects" : "Enable sound effects"}
           </VisuallyHidden>
         </button>
+        <select
+          id="component-selector"
+          value={selectedComponent}
+          onChange={(event) =>
+            setSelectedComponent(event.target.value as ComponentKey)
+          }
+        >
+          {Object.entries(components).map(([key, { name }]) => (
+            <option key={key} value={key}>
+              {name}
+            </option>
+          ))}
+        </select>
       </MaxWidthWrapper>
     </header>
   );

@@ -4,6 +4,7 @@ import "./styles.css";
 import { StyledComponentsRegistry } from "./components/StyledComponentsRegistry";
 import Header from "./components/Header/Header";
 import { SoundProvider } from "./providers/SoundProvider";
+import { ComponentProvider } from "./providers/ComponentProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,10 +36,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <SoundProvider>
-          <Header />
-          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-        </SoundProvider>
+        <ComponentProvider>
+          <SoundProvider>
+            <Header />
+            <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+          </SoundProvider>
+        </ComponentProvider>
         <footer>Page rendered on {formattedDate}</footer>
       </body>
     </html>

@@ -1,20 +1,23 @@
-"use client";
-import React from "react";
+'use client';
+import React from 'react';
+import {format} from 'date-fns/format';
 
 function Clock() {
-  const [time, setTime] = React.useState(() => new Date());
+  const [time, setTime] = React.useState(new Date());
 
   React.useEffect(() => {
     const intervalId = window.setInterval(() => {
       setTime(new Date());
-    }, 1000);
+    }, 50);
 
     return () => {
       window.clearInterval(intervalId);
     };
   }, []);
 
-  return <p>{time.toLocaleTimeString()}</p>;
+  return (
+    <p suppressHydrationWarning className="clock">{format(time, 'hh:mm:ss.S a')}</p>
+  );
 }
 
 export default Clock;
